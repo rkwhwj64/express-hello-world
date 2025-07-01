@@ -8,7 +8,7 @@ const redirectUri = 'https://henry-magic-mirror.onrender.com/callback';
 const scope = 'openid email offline_access';
 
 app.get('/', (req, res) => {
-  const url = `https://auth.tesla.com/oauth2/v3/authorize?client_id=${clientId}&scope=${encodeURIComponent(scope)}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&state=magicmirror`;
+  const url = `https://auth.tesla.com/oauth2/v3/authorize?client_id=${clientId}&scope=openid%20email%20offline_access&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&state=magicmirror`;
   res.redirect(url);
 });
 
