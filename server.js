@@ -8,8 +8,14 @@ const redirectUri = 'https://henry-magic-mirror.onrender.com/callback';
 const scope = 'openid%20offline_access';
 
 app.get('/', (req, res) => {
-  const authUrl = `https://auth.tesla.com/oauth2/v3/authorize?client_id=${clientId}&scope=${scope}&response_type=code&redirect_uri=${encodeURIComponent(redirectUri)}&state=magicmirror`;
-  console.log("Redirecting to:", authUrl);
+  const authUrl = 'https://auth.tesla.com/oauth2/v3/authorize' +
+    '?client_id=3d28e98a-a85d-4ed8-8d49-1f6b48c86e55' +
+    '&response_type=code' +
+    '&redirect_uri=https%3A%2F%2Fhenry-magic-mirror.onrender.com%2Fcallback' +
+    '&scope=openid%20offline_access' +
+    '&state=magicmirror';
+
+  console.log("🚀 Redirecting to Tesla:", authUrl);
   res.redirect(authUrl);
 });
 
